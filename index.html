@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e4a96">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Belajar Python dari Nol sampai Mahir</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafaf7;--fg:#1d1d1b;--mut:#66665f;--card:#fff;--line:#e3e3dc;--acc:#2b6cb0;--code:#f1f1ec;--codefg:#1d1d1b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171717;--fg:#ececE6;--mut:#a0a099;--card:#202020;--line:#333;--acc:#7db3ee;--code:#0f0f0f;--codefg:#e6e6e0}}
+:root[data-theme="dark"]{--bg:#171717;--fg:#ececE6;--mut:#a0a099;--card:#202020;--line:#333;--acc:#7db3ee;--code:#0f0f0f;--codefg:#e6e6e0}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:28px 18px 18px;max-width:760px;margin:auto}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px}
+header p{color:var(--mut);margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav div{display:flex;gap:8px;overflow-x:auto;padding:10px 18px;max-width:760px;margin:auto}
+nav a{flex:none;font-size:13px;padding:5px 11px;border:1px solid var(--line);border-radius:99px;color:var(--fg);text-decoration:none;background:var(--card)}
+main{max-width:760px;margin:auto;padding:0 18px 60px}
+section{margin-top:34px}
+h2{font-size:21px;margin:0 0 8px;color:var(--acc)}
+h3{font-size:16px;margin:18px 0 4px}
+.lv{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.box{position:relative;margin:10px 0}
+pre{margin:0;background:var(--code);color:var(--codefg);border-radius:10px;padding:14px 12px;overflow-x:auto;font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line)}
+.cp{position:absolute;top:6px;right:6px;font-size:12px;padding:4px 10px;border-radius:7px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.tip{border-left:3px solid var(--acc);background:var(--card);padding:8px 12px;border-radius:6px;font-size:14px;margin:10px 0}
+code.i{background:var(--code);padding:1px 5px;border-radius:4px;font-size:14px}
+.soal{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.soal b{color:var(--acc)}.soal ol{margin:6px 0 0;padding-left:20px;font-size:15px}.soal li{margin:3px 0}
+footer{max-width:760px;margin:auto;padding:0 18px 40px;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+<h1>Belajar Python dari Nol sampai Mahir</h1>
+<p>12 bab ringkas dengan contoh kode yang bisa disalin dan langsung dijalankan di Pydroid 3 atau komputer. Contoh banyak memakai kasus usaha perakitan PC.</p>
+</header>
+<nav><div>
+<a href="#b1">1 Dasar</a><a href="#b2">2 Variabel</a><a href="#b3">3 Operator</a><a href="#b4">4 Kondisi</a><a href="#b5">5 Loop</a><a href="#b6">6 Struktur Data</a><a href="#b7">7 Fungsi</a><a href="#b8">8 File &amp; Error</a><a href="#b9">9 OOP</a><a href="#b10">10 Modul</a><a href="#b11">11 Lanjutan</a><a href="#b12">12 Proyek</a>
+</div></nav>
+<main>
+
+<section id="b1"><div class="lv">Pemula</div><h2>1. Dasar &amp; Program Pertama</h2>
+<p>Python adalah bahasa yang dibaca seperti kalimat biasa. Di Android, pasang <b>Pydroid 3</b>, tulis kode, lalu tekan tombol ▶. Komentar diawali <code class="i">#</code> dan tidak dijalankan.</p>
+<div class="box"><pre><code># program pertama
+print("Halo, dunia!")
+print("Selamat datang di toko rakitan PC")</code></pre></div>
+<div class="tip">Python sangat peka terhadap indentasi (jorok-rapi spasi di awal baris). Gunakan 4 spasi.</div>
+<div class="soal"><b>Latihan Bab 1</b><ol><li>Tulis program yang mencetak nama toko dan alamatmu di dua baris berbeda.</li><li>Tambahkan komentar pada kodemu yang menjelaskan fungsi tiap baris.</li><li>Cetak tulisan “Python itu mudah” sebanyak tiga kali dengan tiga perintah print.</li></ol></div>
+</section>
+
+<section id="b2"><div class="lv">Pemula</div><h2>2. Variabel &amp; Tipe Data</h2>
+<p>Variabel adalah wadah nilai. Tipe utama: <code class="i">int</code>, <code class="i">float</code>, <code class="i">str</code>, <code class="i">bool</code>.</p>
+<div class="box"><pre><code>nama = "Ryzen 5 5600"      # str
+harga = 1850000            # int
+diskon = 0.05              # float
+tersedia = True            # bool
+
+print(nama, type(nama))
+print(f"{nama} harganya Rp{harga:,}")   # f-string
+print(int("42") + 8, str(10) + "x")     # konversi tipe</code></pre></div>
+<div class="soal"><b>Latihan Bab 2</b><ol><li>Buat variabel untuk nama, harga, dan stok sebuah SSD, lalu cetak dengan f-string.</li><li>Ubah teks “25” menjadi angka, tambahkan 5, lalu cetak hasilnya.</li><li>Apa hasil dari type(3.0) dan type(True)? Buktikan dengan kode.</li></ol></div>
+</section>
+
+<section id="b3"><div class="lv">Pemula</div><h2>3. Operator &amp; Input</h2>
+<div class="box"><pre><code>a, b = 17, 5
+print(a + b, a - b, a * b)
+print(a / b)    # 3.4  pembagian biasa
+print(a // b)   # 3    pembagian bulat
+print(a % b)    # 2    sisa bagi
+print(a ** 2)   # 289  pangkat
+
+harga = int(input("Harga barang: "))
+qty = int(input("Jumlah: "))
+print("Total:", harga * qty)</code></pre></div>
+<p><code class="i">input()</code> selalu menghasilkan teks, jadi ubah dengan <code class="i">int()</code> atau <code class="i">float()</code> sebelum berhitung.</p>
+<div class="soal"><b>Latihan Bab 3</b><ol><li>Minta pengguna memasukkan panjang dan lebar, lalu hitung luasnya.</li><li>Hitung total harga 3 RAM seharga Rp650.000 ditambah ongkos rakit Rp150.000.</li><li>Tampilkan hasil bagi bulat dan sisa bagi dari 47 dibagi 6.</li></ol></div>
+</section>
+
+<section id="b4"><div class="lv">Pemula</div><h2>4. Percabangan (if)</h2>
+<div class="box"><pre><code>total = int(input("Total belanja: "))
+
+if total &gt;= 10000000:
+    diskon = 0.10
+elif total &gt;= 5000000:
+    diskon = 0.05
+else:
+    diskon = 0
+
+bayar = total * (1 - diskon)
+print(f"Diskon {diskon:.0%}, bayar Rp{bayar:,.0f}")</code></pre></div>
+<p>Perbandingan: <code class="i">==</code>, <code class="i">!=</code>, <code class="i">&lt;</code>, <code class="i">&gt;</code>. Gabungkan dengan <code class="i">and</code>, <code class="i">or</code>, <code class="i">not</code>.</p>
+<div class="soal"><b>Latihan Bab 4</b><ol><li>Program yang meminta umur lalu mencetak “dewasa” jika 18 tahun atau lebih, selain itu “belum dewasa”.</li><li>Cek apakah sebuah angka genap atau ganjil (petunjuk: operator %).</li><li>Buat sistem nilai: 80 ke atas A, 70 ke atas B, 60 ke atas C, selain itu D.</li></ol></div>
+</section>
+
+<section id="b5"><div class="lv">Pemula</div><h2>5. Perulangan</h2>
+<div class="box"><pre><code>for i in range(1, 6):
+    print("Unit PC ke-", i)
+
+stok = 3
+while stok &gt; 0:
+    print("Stok tersisa:", stok)
+    stok -= 1
+
+for n in range(10):
+    if n == 3:
+        continue   # lewati
+    if n == 6:
+        break      # berhenti
+    print(n)</code></pre></div>
+<div class="soal"><b>Latihan Bab 5</b><ol><li>Cetak angka 1 sampai 20 dengan for.</li><li>Hitung jumlah semua angka dari 1 sampai 100.</li><li>Cetak tabel perkalian 7 (7 x 1 sampai 7 x 10).</li><li>Tebak angka rahasia dengan while sampai tebakan benar.</li></ol></div>
+</section>
+
+<section id="b6"><div class="lv">Menengah</div><h2>6. List, Tuple, Dict, Set</h2>
+<div class="box"><pre><code>komponen = ["CPU", "RAM", "SSD"]       # list (bisa diubah)
+komponen.append("PSU")
+print(komponen[0], komponen[-1], len(komponen))
+
+titik = (10, 20)                       # tuple (tetap)
+
+harga = {"CPU": 1850000, "RAM": 650000}   # dict
+harga["SSD"] = 700000
+for nama, h in harga.items():
+    print(nama, h)
+
+unik = set([1, 2, 2, 3])               # set (tanpa duplikat)
+print(unik, sum(harga.values()))</code></pre></div>
+<div class="soal"><b>Latihan Bab 6</b><ol><li>Buat list lima nama komponen, tambahkan satu, hapus satu, lalu urutkan.</li><li>Buat dict harga empat komponen dan hitung totalnya dengan sum().</li><li>Hilangkan angka ganda dari [1, 2, 2, 3, 3, 3] memakai set.</li></ol></div>
+</section>
+
+<section id="b7"><div class="lv">Menengah</div><h2>7. Fungsi</h2>
+<p>Fungsi membungkus kode agar bisa dipakai ulang.</p>
+<div class="box"><pre><code>def hitung_total(daftar, diskon=0):
+    """Menjumlah harga lalu menerapkan diskon."""
+    total = sum(daftar)
+    return total * (1 - diskon)
+
+print(hitung_total([1850000, 650000, 700000]))
+print(hitung_total([1850000, 650000], diskon=0.1))
+
+def info(*args, **kwargs):
+    print(args, kwargs)
+
+info(1, 2, merk="ASUS")</code></pre></div>
+<div class="soal"><b>Latihan Bab 7</b><ol><li>Fungsi luas_persegi(sisi) yang mengembalikan luasnya.</li><li>Fungsi hitung_diskon(harga, persen) dengan persen default 5.</li><li>Fungsi rata_rata(daftar) yang mengembalikan nilai rata-rata sebuah list.</li></ol></div>
+</section>
+
+<section id="b8"><div class="lv">Menengah</div><h2>8. File &amp; Penanganan Error</h2>
+<div class="box"><pre><code>with open("stok.txt", "w") as f:
+    f.write("RAM 16GB,10\nSSD 512GB,5\n")
+
+with open("stok.txt") as f:
+    for baris in f:
+        nama, jumlah = baris.strip().split(",")
+        print(nama, "->", jumlah)
+
+try:
+    angka = int(input("Masukkan angka: "))
+    print(100 / angka)
+except ValueError:
+    print("Itu bukan angka")
+except ZeroDivisionError:
+    print("Tidak bisa dibagi nol")
+finally:
+    print("Selesai")</code></pre></div>
+<div class="soal"><b>Latihan Bab 8</b><ol><li>Simpan tiga nama pelanggan ke file pelanggan.txt, lalu baca dan cetak isinya.</li><li>Buat program pembagian dua angka yang aman dari error input dan pembagian nol.</li><li>Tambahkan satu baris baru ke file memakai mode "a".</li></ol></div>
+</section>
+
+<section id="b9"><div class="lv">Menengah</div><h2>9. OOP (Class &amp; Objek)</h2>
+<div class="box"><pre><code>class Komponen:
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        self.harga = harga
+        self.stok = stok
+
+    def jual(self, jumlah):
+        if jumlah &gt; self.stok:
+            print("Stok kurang")
+            return 0
+        self.stok -= jumlah
+        return self.harga * jumlah
+
+class Laptop(Komponen):          # pewarisan
+    def __init__(self, nama, harga, stok, layar):
+        super().__init__(nama, harga, stok)
+        self.layar = layar
+
+ram = Komponen("RAM 16GB", 650000, 10)
+print(ram.jual(2), ram.stok)</code></pre></div>
+<div class="soal"><b>Latihan Bab 9</b><ol><li>Buat class Pelanggan dengan atribut nama dan poin, serta method tambah_poin().</li><li>Buat class Laptop yang mewarisi Komponen dan menambah atribut ukuran layar.</li><li>Buat tiga objek komponen, simpan dalam list, lalu cetak nama dan stok masing-masing.</li></ol></div>
+</section>
+
+<section id="b10"><div class="lv">Mahir</div><h2>10. Modul, pip &amp; Library</h2>
+<p>Gunakan modul bawaan atau pasang library dengan pip (di Pydroid 3: menu Pip).</p>
+<div class="box"><pre><code>import math, random, json
+from datetime import datetime
+
+print(math.sqrt(144), random.randint(1, 6))
+print(datetime.now().strftime("%d-%m-%Y %H:%M"))
+
+data = {"pelanggan": "Budi", "total": 5200000}
+teks = json.dumps(data, indent=2)
+print(json.loads(teks)["pelanggan"])
+
+# pip install requests beautifulsoup4
+import requests
+from bs4 import BeautifulSoup
+
+r = requests.get("https://example.com", timeout=10)
+sup = BeautifulSoup(r.text, "html.parser")
+print(sup.find("h1").text)</code></pre></div>
+<div class="soal"><b>Latihan Bab 10</b><ol><li>Pakai modul random untuk memilih satu nama dari sebuah list secara acak.</li><li>Simpan dict pesanan ke file JSON, lalu baca kembali.</li><li>Ambil judul sebuah halaman web dengan requests dan BeautifulSoup.</li></ol></div>
+</section>
+
+<section id="b11"><div class="lv">Mahir</div><h2>11. Teknik Lanjutan</h2>
+<div class="box"><pre><code># comprehension
+kuadrat = [x**2 for x in range(5)]
+mahal = {k: v for k, v in {"A": 1, "B": 9}.items() if v &gt; 5}
+
+# lambda &amp; sorted
+barang = [("RAM", 650000), ("CPU", 1850000)]
+print(sorted(barang, key=lambda b: b[1], reverse=True))
+
+# generator
+def hitung(n):
+    for i in range(n):
+        yield i * 2
+print(list(hitung(4)))
+
+# decorator
+def catat(fungsi):
+    def bungkus(*a, **k):
+        print("Memanggil", fungsi.__name__)
+        return fungsi(*a, **k)
+    return bungkus
+
+@catat
+def salam(nama):
+    return "Halo " + nama
+print(salam("Andi"))</code></pre></div>
+<div class="tip">Pelajari juga: <code class="i">venv</code>, <code class="i">type hints</code>, <code class="i">pytest</code>, <code class="i">async/await</code>, dan Git.</div>
+<div class="soal"><b>Latihan Bab 11</b><ol><li>Buat list kubik angka 1 sampai 10 dengan list comprehension.</li><li>Urutkan daftar (nama, harga) dari harga termurah memakai lambda.</li><li>Buat decorator yang mencetak “mulai” dan “selesai” di sekitar sebuah fungsi.</li></ol></div>
+</section>
+
+<section id="b12"><div class="lv">Mahir</div><h2>12. Proyek: Kalkulator Rakitan PC</h2>
+<p>Menggabungkan dict, fungsi, loop, dan file JSON menjadi aplikasi kecil.</p>
+<div class="box"><pre><code>import json
+
+KATALOG = {
+    "1": ("Ryzen 5 5600", 1850000),
+    "2": ("RAM 16GB DDR4", 650000),
+    "3": ("SSD 512GB", 700000),
+    "4": ("PSU 550W", 550000),
+}
+
+def pilih_komponen():
+    keranjang = []
+    while True:
+        for k, (nama, h) in KATALOG.items():
+            print(f"{k}. {nama} - Rp{h:,}")
+        pilih = input("Pilih nomor (Enter untuk selesai): ")
+        if pilih == "":
+            return keranjang
+        if pilih in KATALOG:
+            keranjang.append(KATALOG[pilih])
+        else:
+            print("Nomor tidak valid")
+
+def hitung(keranjang, jasa=150000):
+    return sum(h for _, h in keranjang) + jasa
+
+def simpan(pelanggan, keranjang, total):
+    data = {"pelanggan": pelanggan,
+            "item": [n for n, _ in keranjang],
+            "total": total}
+    with open("pesanan.json", "a") as f:
+        f.write(json.dumps(data) + "\n")
+
+pelanggan = input("Nama pelanggan: ")
+item = pilih_komponen()
+total = hitung(item)
+print(f"Total (termasuk jasa rakit): Rp{total:,}")
+simpan(pelanggan, item, total)</code></pre></div>
+<p>Langkah berikutnya: tambah stok otomatis, antarmuka dengan Kivy atau Flask, dan laporan penjualan.</p>
+<div class="soal"><b>Tantangan Bab 12</b><ol><li>Tambahkan fitur stok: kurangi stok saat barang dipilih dan tolak jika habis.</li><li>Buat menu untuk melihat semua pesanan dari pesanan.json.</li><li>Tambahkan laporan total penjualan hari ini.</li></ol></div>
+</section>
+</main>
+<footer>Tips belajar: ketik ulang kode sendiri, ubah nilainya, dan buat proyek kecil setiap minggu.</footer>
+<script>
+document.querySelectorAll('.box').forEach(function(b){
+  var btn=document.createElement('button');
+  btn.className='cp';btn.type='button';btn.textContent='Salin';
+  btn.addEventListener('click',function(){
+    var t=b.querySelector('code').innerText;
+    function ok(){btn.textContent='Tersalin ✓';setTimeout(function(){btn.textContent='Salin'},1600)}
+    function fb(){
+      var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');ok()}catch(e){btn.textContent='Gagal'}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else{fb()}
+  });
+  b.appendChild(btn);
+});
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js')})}
+</script>
+</body>
+</html>
